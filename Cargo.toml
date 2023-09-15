@@ -1,0 +1,25 @@
+[package]
+name = "rails-lsp"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[workspace.dependencies]
+lsp-server = "0.7.4"
+lsp-types = "0.94.1"
+serde = { version = "1.0.188", features = ["derive"] }
+serde_json = "1.0.105"
+anyhow = "1.0.75"
+lib-ruby-parser = "4.0.5"
+ignore = { version = "0.4.18", features = ["simd-accel"] }
+thiserror = "1.0.48"
+
+[dependencies]
+lsp = { path = "./lsp" }
+anyhow.workspace = true
+
+[workspace]
+members = [
+    "lsp"
+]
